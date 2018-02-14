@@ -1,0 +1,19 @@
+---
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - mix deps.get
+  pre_build:
+  	command:
+  	  - mix test
+  build:
+  	commands:
+  	  - mix release.init
+  	  - mix release
+artifacts:
+  files:
+    - *.tar.gz
+  discard-paths: yes
+  base-directory: _build/*/rel/*/releases/*/
