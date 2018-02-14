@@ -6,10 +6,10 @@ phases:
     commands:
       - mix deps.get
   pre_build:
-  	commands:
-  	  - mix test
+    commands:
+      - mix test
   build:
-  	commands:
+    commands:
   	  - mix release.init
   	  - mix release
 artifacts:
