@@ -10,8 +10,8 @@ phases:
       - mix test
   build:
     commands:
-  	  - mix release.init
-  	  - mix release
+      - mix release.init
+      - mix release
 artifacts:
   files:
     - *.tar.gz
