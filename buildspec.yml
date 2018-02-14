@@ -6,7 +6,7 @@ phases:
     commands:
       - mix deps.get
   pre_build:
-  	command:
+  	commands:
   	  - mix test
   build:
   	commands:
