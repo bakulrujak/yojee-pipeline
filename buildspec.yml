@@ -9,6 +9,7 @@ phases:
       - mix deps.get
   pre_build:
     commands:
+      - apt-cache search docker
       - apt-get install -y --no-install-recommends docker
       - docker run -p 5432:5432 -e POSTGRES_PASSWORD=d0ntt3ll -d postgres
       - mix test
