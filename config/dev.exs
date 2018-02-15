@@ -52,8 +52,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :yojee_chat_example, YojeeChatExample.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres"
-  password: "d0ntt3ll"
+  username: "postgres",
+  password: "d0ntt3ll",
   database: "postgres",
   hostname: "localhost",
   pool_size: 10
