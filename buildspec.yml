@@ -18,12 +18,10 @@ phases:
       - docker run -p 5432:5432 -e POSTGRES_PASSWORD=d0ntt3ll -d postgres
       - mix ecto.create
       - mix test
-  build:
+  post_build:
     commands:
-      - mix release.init
-      - mix release
+      - zip -r yojee_chat_example.zip **/*
 artifacts:
   files:
-    - yojee_chat_example/**/*
+    - yojee_chat_example.zip
   discard-paths: no
-  base-directory: _build/*/rel/
