@@ -7,7 +7,7 @@ config :yojee_chat_example, YojeeChatExampleWeb.Endpoint,
   server: false
 
 # Print only warnings and errors during test
-config :logger, level: :warn
+config :logger, level: :info
 
 # Configure your database
 config :yojee_chat_example, YojeeChatExample.Repo,
