@@ -5,7 +5,6 @@ phases:
   install:
     commands:
       - echo "Installing tools..."
-      - export LC_ALL=en_US.UTF-8; export LANG=en_US.UTF-8; export LANGUAGE=en_US.UTF-8
       - wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && dpkg -i erlang-solutions_1.0_all.deb
       - echo "deb http://binaries.erlang-solutions.com/ubuntu $(lsb_release -cs) contrib" > /etc/apt/sources.list.d/erlang-solutions.list
       - curl -sL https://deb.nodesource.com/setup_9.x | bash -
@@ -18,11 +17,9 @@ phases:
     commands:
       - docker run -p 5432:5432 -e POSTGRES_PASSWORD=d0ntt3ll -d postgres
       - mix ecto.create
-      - mix ecto.migrate
       - mix test
   build:
     commands:
-      - cd assets && npm install      
       - mix release.init
       - mix release
 artifacts:
