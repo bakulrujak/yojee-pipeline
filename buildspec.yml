@@ -24,6 +24,6 @@ phases:
       - mix release
 artifacts:
   files:
-    - yojee_chat_example.tar.gz
+    - yojee_chat_example/**/*
   discard-paths: no
-  base-directory: _build/*/rel/yojee_chat_example/releases/*/
+  base-directory: _build/*/rel/
