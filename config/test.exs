@@ -13,7 +13,7 @@ config :logger, level: :warn
 config :yojee_chat_example, YojeeChatExample.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
-  password: "postgres",
+  password: "d0ntt3ll",
   database: "yojee_chat_example_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
