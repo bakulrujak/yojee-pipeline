@@ -9,9 +9,11 @@ phases:
       - mix deps.get
   pre_build:
     commands:
+      - docker run -p 5432:5432 -e POSTGRES_PASSWORD=d0ntt3ll -d postgres
       - mix test
   build:
     commands:
+      - cd assets && npm install      
       - mix release.init
       - mix release
 artifacts:
