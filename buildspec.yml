@@ -16,6 +16,7 @@ phases:
   pre_build:
     commands:
       - docker run -p 5432:5432 -e POSTGRES_PASSWORD=d0ntt3ll -d postgres
+      - mix ecto.create
       - mix test
   build:
     commands:
