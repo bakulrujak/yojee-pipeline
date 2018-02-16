@@ -5,7 +5,7 @@ phases:
   install:
     commands:
       - echo "Installing tools..."
-      - wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && dpkg -i erlang-solutions_1.0_all.deb
+      - wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && dpkg -i erlang-solutions_1.0_all.deb && rm -f erlang-solutions_1.0_all.deb
       - echo "deb http://binaries.erlang-solutions.com/ubuntu $(lsb_release -cs) contrib" > /etc/apt/sources.list.d/erlang-solutions.list
       - curl -sL https://deb.nodesource.com/setup_9.x | bash -
       - apt-get install -y --no-install-recommends erlang-dev erlang-parsetools erlang-xmerl elixir nodejs 
@@ -20,7 +20,7 @@ phases:
       - mix test
   post_build:
     commands:
-      - zip -r yojee_chat_example.zip ./*
+      - zip -r yojee_chat_example.zip ./* ./.scripts/
 artifacts:
   files:
     - yojee_chat_example.zip
