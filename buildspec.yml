@@ -20,7 +20,7 @@ phases:
       - mix test
   post_build:
     commands:
-      - zip -r yojee_chat_example.zip **/*
+      - zip -r yojee_chat_example.zip ./*
 artifacts:
   files:
     - yojee_chat_example.zip
