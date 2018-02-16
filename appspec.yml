@@ -1,0 +1,10 @@
+version: 0.0
+os: linux
+files:
+  - source:
+    destination: ~/
+hooks:
+  ApplicationStart:
+    - location: .scripts/startme.sh
+      timeout: 3600
+      runas: root
