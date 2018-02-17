@@ -4,6 +4,9 @@ files:
   - source: /
     destination: /home/ubuntu/app
 hooks:
+  BeforeInstall:
+    - location: .scripts/initial.sh
+      runas: root
   ApplicationStart:
     - location: .scripts/startme.sh
       timeout: 3600

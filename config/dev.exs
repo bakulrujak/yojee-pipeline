@@ -9,6 +9,14 @@ use Mix.Config
 config :yojee_chat_example, YojeeChatExampleWeb.Endpoint,
   http: [port: 8080],
   debug_errors: true,
+  live_reload: [
+    patterns: [
+      ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
+      ~r{priv/gettext/.*(po)$},
+      ~r{lib/yojee_chat_example_web/views/.*(ex)$},
+      ~r{lib/yojee_chat_example_web/templates/.*(eex)$}
+    ]
+  ],  
   code_reloader: true,
   check_origin: false,
   watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin",
@@ -31,16 +39,16 @@ config :yojee_chat_example, YojeeChatExampleWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :yojee_chat_example, YojeeChatExampleWeb.Endpoint,
-	http: [port: System.get_env("PORT") || 4000],
-  live_reload: [
-    patterns: [
-      ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
-      ~r{priv/gettext/.*(po)$},
-      ~r{lib/yojee_chat_example_web/views/.*(ex)$},
-      ~r{lib/yojee_chat_example_web/templates/.*(eex)$}
-    ]
-  ]
+# config :yojee_chat_example, YojeeChatExampleWeb.Endpoint,
+# 	http: [port: System.get_env("PORT") || 4000],
+#   live_reload: [
+#     patterns: [
+#       ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
+#       ~r{priv/gettext/.*(po)$},
+#       ~r{lib/yojee_chat_example_web/views/.*(ex)$},
+#       ~r{lib/yojee_chat_example_web/templates/.*(eex)$}
+#     ]
+#   ]
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"
@@ -52,8 +60,14 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :yojee_chat_example, YojeeChatExample.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "d0ntt3ll",
-  database: "postgres",
-  hostname: "localhost",
+  username: "staging",
+  password: "123yojee098",
+  database: "yojee_staging",
+  hostname: "yojee-staging.cubnr9uzb3cd.us-east-1.rds.amazonaws.com",
   pool_size: 10
+
+config :ex_aws,
+  access_key_id: "AKIAJLVQWQZHGXDIC4UQ",
+  secret_access_key: "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",
+  debug_requests: true,
+  region: "us-east-1"  
