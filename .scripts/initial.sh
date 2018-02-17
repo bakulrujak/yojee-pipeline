@@ -6,7 +6,7 @@ sh .scripts/env.sh
 mix local.rebar --force
 mix local.hex --force
 mix deps.get
-cd assets && npm install
 mix ecto.migrate
+cd assets && npm install
 
 exit 0
