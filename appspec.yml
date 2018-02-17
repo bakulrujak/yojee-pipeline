@@ -12,3 +12,7 @@ hooks:
     - location: .scripts/startme.sh
       timeout: 3600
       runas: root
+  ValidateService:
+    - location: .scripts/appcheck.sh
+      runas: root
+      timeout: 300      

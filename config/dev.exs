@@ -8,7 +8,7 @@ use Mix.Config
 # with brunch.io to recompile .js and .css sources.
 config :yojee_chat_example, YojeeChatExampleWeb.Endpoint,
   http: [port: 8080],
-  debug_errors: true,
+  debug_errors: false,
   live_reload: [
     patterns: [
       ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
