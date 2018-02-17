@@ -4,6 +4,7 @@ export LC_ALL="en_US.UTF-8"
 
 sh env.sh
 cd ../
+pwd
 mix local.rebar --force
 mix local.hex --force
 mix deps.get
