@@ -6,8 +6,8 @@ files:
 hooks:
   BeforeInstall:
     - location: .scripts/initial.sh
-      runas: root
       timeout: 3600
+      runas: root
   ApplicationStart:
     - location: .scripts/startme.sh
       timeout: 3600

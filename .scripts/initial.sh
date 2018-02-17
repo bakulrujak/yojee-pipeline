@@ -6,7 +6,5 @@ sh .scripts/env.sh
 mix local.rebar --force
 mix local.hex --force
 mix deps.get
-mix ecto.migrate
-cd assets && npm install
-
-exit 0
+mix ecto.migrate > /tmp/migrate.txt
+cd assets && npm install >> /tmp/migrate.txt
