@@ -5,10 +5,9 @@ files:
     destination: /home/ubuntu/app
 hooks:
   BeforeInstall:
-    - location: .scripts/env.sh
-      runas: root
     - location: .scripts/initial.sh
       runas: root
+      timeout: 3600
   ApplicationStart:
     - location: .scripts/startme.sh
       timeout: 3600
