@@ -5,6 +5,8 @@ files:
     destination: /home/ubuntu/app
 hooks:
   BeforeInstall:
+    - location: .scripts/env.sh
+      runas: root
     - location: .scripts/initial.sh
       runas: root
   ApplicationStart:
