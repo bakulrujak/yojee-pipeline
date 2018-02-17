@@ -2,7 +2,6 @@
 
 export LC_ALL="en_US.UTF-8"
 
-cd /home/ubuntu/app
 sh .scripts/env.sh
 mix local.rebar --force
 mix local.hex --force
