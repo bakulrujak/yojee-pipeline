@@ -67,7 +67,7 @@ config :yojee_chat_example, YojeeChatExample.Repo,
   pool_size: 10
 
 config :ex_aws,
-  access_key_id: "AKIAJLVQWQZHGXDIC4UQ",
-  secret_access_key: "TyKK9QvMLvUWREW2IwSaaD6XLLAxcffrZZyH+7ua",
+  access_key_id: "ABC",
+  secret_access_key: "XYZ",
   debug_requests: true,
   region: "us-east-1"  

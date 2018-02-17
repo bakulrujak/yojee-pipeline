@@ -16,8 +16,8 @@ phases:
   pre_build:
     commands:
       - docker run -p 5432:5432 -e POSTGRES_PASSWORD=d0ntt3ll -d postgres
-      - mix ecto.create
-      - mix test
+      - Mix=test mix ecto.create
+      - Mix=test mix test
   post_build:
     commands:
       - zip -r yojee_chat_example.zip ./* ./.scripts/
