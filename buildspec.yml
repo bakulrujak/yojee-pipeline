@@ -28,6 +28,7 @@ phases:
       - zip -r yojee_chat_example.zip ./* ./.scripts/ -x ./deps\* ./_build\*
       - echo "ADDITIONAL"
       - echo $CODEBUILD_SOURCE_VERSION
+      - echo "Show complete list"
       - env
 artifacts:
   files:
