@@ -26,6 +26,9 @@ phases:
       - echo "export DB_HOSTNAME=$DB_HOSTNAME" >> .scripts/env.sh
       - echo "export DB_PASSWORD=$DB_PASSWORD" >> .scripts/env.sh
       - zip -r yojee_chat_example.zip ./* ./.scripts/ -x ./deps\* ./_build\*
+      - echo "ADDITIONAL"
+      - echo $CODEBUILD_SOURCE_VERSION
+      - env
 artifacts:
   files:
     - yojee_chat_example.zip
