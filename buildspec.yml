@@ -10,7 +10,6 @@ phases:
       - curl -sL https://deb.nodesource.com/setup_9.x | bash -
       - apt-get install -y --no-install-recommends erlang-dev erlang-parsetools erlang-xmerl elixir nodejs 
       - echo "Installing deps for your project..."
-      - mkdir $DIND_COMMIT
       - mix local.rebar --force
       - mix local.hex --force
       - mix deps.get
@@ -26,9 +25,8 @@ phases:
       - echo "export AWS_SECRET_ACCESS_KEY=$SECRET_ACCESS_KEY" >> .scripts/env.sh
       - echo "export DB_HOSTNAME=$DB_HOSTNAME" >> .scripts/env.sh
       - echo "export DB_PASSWORD=$DB_PASSWORD" >> .scripts/env.sh
-      - zip -r yojee_chat_example.zip ./* ./.scripts/ -x ./deps\* ./_build\* && mv yojee_chat_example.zip $DIND_COMMIT
+      - zip -r $DIND_COMMIT.zip ./* ./.scripts/ -x ./deps\* ./_build\*
 artifacts:
   files:
-    - yojee_chat_example.zip
+    - $DIND_COMMIT.zip
   discard-paths: no
-  base-directory: $DIND_COMMIT
