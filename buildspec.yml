@@ -17,13 +17,13 @@ phases:
     commands:
       - if [ $CODEBUILD_INITIATOR == 'codepipeline/yojee-pipeline' ]; then printf "export DB_HOSTNAME=$PROD_DB_HOSTNAME\nexport DB_PASSWORD=$PROD_DB_PASSWORD" >> .scripts/middle.sh && sed -i 's/MIX_ENV=dev/MIX_ENV=prod/g' .scripts/env.sh; fi
       - docker run -p 5432:5432 -e POSTGRES_PASSWORD=d0ntt3ll -d postgres
+      - export MIX_ENV=test
       - mix ecto.create
       - mix test
   post_build:
     commands:
       - . ./.scripts/middle.sh; printf "export AWS_ACCESS_KEY_ID=$ACCESS_KEY_ID\nexport AWS_SECRET_ACCESS_KEY=$SECRET_ACCESS_KEY\nexport DB_HOSTNAME=$DB_HOSTNAME\nexport DB_PASSWORD=$DB_PASSWORD" >> .scripts/env.sh 
-      - env
-      - rm -rf ./_build ./deps
+      - rm -rf ./_build ./deps ./.scripts/middle.sh
 artifacts:
   files:
     - '**/*'
