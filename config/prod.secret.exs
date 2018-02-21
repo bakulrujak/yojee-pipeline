@@ -14,7 +14,8 @@ config :yojee_chat_example, YojeeChatExampleWeb.Endpoint,
 # Configure your database
 config :yojee_chat_example, YojeeChatExample.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "yojee_chat_example_prod",
+  username: "yojee_production",
+  password: System.get_env("DB_PASSWORD"),
+  database: "yojee_production",
+  hostname: System.get_env("DB_HOSTNAME"),
   pool_size: 15
