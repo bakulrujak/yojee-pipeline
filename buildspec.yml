@@ -25,6 +25,7 @@ phases:
       - echo "export AWS_SECRET_ACCESS_KEY=$SECRET_ACCESS_KEY" >> .scripts/env.sh
       - echo "export DB_HOSTNAME=$DB_HOSTNAME" >> .scripts/env.sh
       - echo "export DB_PASSWORD=$DB_PASSWORD" >> .scripts/env.sh
+      - env
       - rm -rf ./_build ./deps
 artifacts:
   files:
