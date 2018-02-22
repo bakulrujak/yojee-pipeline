@@ -65,9 +65,3 @@ config :yojee_chat_example, YojeeChatExample.Repo,
   database: "yojee_staging",
   hostname: System.get_env("DB_HOSTNAME"),
   pool_size: 10
-
-config :ex_aws,
-  access_key_id: [{:system, "AWS_ACCESS_KEY_ID"}, :instance_role],
-  secret_access_key: [{:system, "AWS_SECRET_ACCESS_KEY"}, :instance_role],
-  debug_requests: false,
-  region: "us-east-1"  

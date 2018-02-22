@@ -10,13 +10,13 @@ config :yojee_chat_example,
   ecto_repos: [YojeeChatExample.Repo]
 
 # Configures the endpoint
-config :yojee_chat_example, YojeeChatExampleWeb.Endpoint,
-	http: [port: {:system, "PORT"}],
-  url: [host: "localhost"],
-  secret_key_base: "YfWm0HzzwsiEUgV7hgNNV09y6tficxKchsn200tLPPECtFmggvGGFBR3ICAUDqwb",
-  render_errors: [view: YojeeChatExampleWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: YojeeChatExample.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+# config :yojee_chat_example, YojeeChatExampleWeb.Endpoint,
+# 	http: [port: {:system, "PORT"}],
+#   url: [host: "localhost"],
+#   secret_key_base: "YfWm0HzzwsiEUgV7hgNNV09y6tficxKchsn200tLPPECtFmggvGGFBR3ICAUDqwb",
+#   render_errors: [view: YojeeChatExampleWeb.ErrorView, accepts: ~w(html json)],
+#   pubsub: [name: YojeeChatExample.PubSub,
+#            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,
