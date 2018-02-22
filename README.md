@@ -82,6 +82,7 @@ Additional tools:
 - AWS Codebuild
 - AWS Codedeploy with blue/green feature
 - Both of services above wrapped by AWS Codepipeline, triggered everytime new commit is pushed to Git
+
 Additional info:
 - Sensitive parameters, such as password, endpoints, and credentials are being stored in AWS Systems Manager. Called by AWS Codebuild
 - For production deployment, I write a simple python script. Here: https://github.com/bakulrujak/hookcommander
